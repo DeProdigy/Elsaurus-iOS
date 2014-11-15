@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Elsaurus" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsA-LX-NJX">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.39355458819307515" green="0.53622626947152041" blue="0.60000002384185791" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fV7-C1-99F"/>
+                                </constraints>
+                                <state key="normal" title="Translate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fV7-C1-99F"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="fV7-C1-99F"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="translationSubmit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wEu-q1-TJg"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Text to translate" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEg-QW-rNg">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="go"/>
+                            </textField>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hgj-Tq-7pO">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="IFq-8M-OEN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IFq-8M-OEN"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="IFq-8M-OEN"/>
+                                    </mask>
+                                </variation>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Hgj-Tq-7pO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="2oI-cH-cou"/>
+                            <constraint firstItem="NEg-QW-rNg" firstAttribute="top" secondItem="Hgj-Tq-7pO" secondAttribute="bottom" constant="22.5" id="2xY-lh-Ibg"/>
+                            <constraint firstItem="rsA-LX-NJX" firstAttribute="top" secondItem="NEg-QW-rNg" secondAttribute="bottom" constant="17" id="C75-m8-RPG"/>
+                            <constraint firstItem="Hgj-Tq-7pO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="35" id="LNC-nL-3ti"/>
+                            <constraint firstAttribute="trailing" secondItem="Hgj-Tq-7pO" secondAttribute="trailing" constant="20" id="NmC-WU-h7y"/>
+                            <constraint firstAttribute="trailing" secondItem="rsA-LX-NJX" secondAttribute="trailing" constant="20" id="Pbz-Ge-hME"/>
+                            <constraint firstAttribute="trailing" secondItem="NEg-QW-rNg" secondAttribute="trailing" constant="20" id="SZ4-ff-CjX"/>
+                            <constraint firstItem="rsA-LX-NJX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="o9k-vl-GVk"/>
+                            <constraint firstItem="NEg-QW-rNg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="sRh-h5-mpX"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="rsA-LX-NJX"/>
+                                <exclude reference="NEg-QW-rNg"/>
+                                <exclude reference="Hgj-Tq-7pO"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="2oI-cH-cou"/>
+                                <exclude reference="LNC-nL-3ti"/>
+                                <exclude reference="NmC-WU-h7y"/>
+                                <exclude reference="2xY-lh-Ibg"/>
+                                <exclude reference="SZ4-ff-CjX"/>
+                                <exclude reference="sRh-h5-mpX"/>
+                                <exclude reference="C75-m8-RPG"/>
+                                <exclude reference="Pbz-Ge-hME"/>
+                                <exclude reference="o9k-vl-GVk"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="rsA-LX-NJX"/>
+                                <include reference="NEg-QW-rNg"/>
+                                <include reference="Hgj-Tq-7pO"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="2oI-cH-cou"/>
+                                <include reference="LNC-nL-3ti"/>
+                                <include reference="NmC-WU-h7y"/>
+                                <include reference="2xY-lh-Ibg"/>
+                                <include reference="SZ4-ff-CjX"/>
+                                <include reference="sRh-h5-mpX"/>
+                                <include reference="C75-m8-RPG"/>
+                                <include reference="Pbz-Ge-hME"/>
+                                <include reference="o9k-vl-GVk"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="translatedText" destination="Hgj-Tq-7pO" id="tWs-RO-Tw9"/>
+                        <outlet property="userInputTextField" destination="NEg-QW-rNg" id="XkI-A5-v1W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.5" y="356"/>
+        </scene>
+    </scenes>
+</document>
