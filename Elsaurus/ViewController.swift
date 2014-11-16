@@ -35,9 +35,80 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func translateTextFieldText() {
-        translatedText.hidden = false
-        translatedText.text = userInputTextField.text
         
+        //        "http://192.168.1.134:3000/translation"
+        
+        var request = NSMutableURLRequest(URL: NSURL(string: "https://elsaurus.herokuapp.com/translation")!)
+        
+        var session = NSURLSession.sharedSession()
+        
+        request.HTTPMethod = "POST"
+        
+        
+        var params = ["text":"\(userInputTextField.text)"] as Dictionary
+        
+        
+        var err: NSError?
+        
+        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+//        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            
+            // json = {"response":"Success","msg":"User login successfully."}
+           
+            if(err != nil) {
+                
+                println(err!.localizedDescription)
+                
+            } else {
+                
+                println("Response: \(response)")
+                
+                var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
+                println("Body: \(strData)\n\n")
+                
+                var err: NSError?
+                var json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as NSDictionary
+                
+                var success = json["response"] as? String
+                
+                println("Succes: \(success)")
+                
+                
+                if json["response"] as NSString == "Success"
+                    
+                {
+                    
+                    println("Login Successfull")
+                    
+                }
+                
+                let responseMsg = json["translation"] as String
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    
+                    self.translatedText.text = responseMsg
+                    
+//                  self.loginStatusLB.text=self.responseMsg
+                    
+                })
+                
+                
+                
+            }
+            
+        })
+        
+        task.resume()
+
+        
+//        translatedText.text = userInputTextField.text
         
     }
 
