@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -124,21 +125,21 @@
                                 <exclude reference="NEg-QW-rNg"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="5bW-ny-FOC"/>
-                                <exclude reference="mdA-Jx-bKq"/>
-                                <exclude reference="n3c-ik-ig8"/>
-                                <exclude reference="sdu-2a-dfd"/>
-                                <exclude reference="OSQ-IA-iT9"/>
+                                <exclude reference="Vnt-kg-whK"/>
                                 <exclude reference="00C-vO-oaq"/>
                                 <exclude reference="OlP-8N-bQH"/>
                                 <exclude reference="zwE-k6-jih"/>
                                 <exclude reference="ap3-qs-pMN"/>
                                 <exclude reference="bFP-bt-TxB"/>
                                 <exclude reference="ci2-RE-BGo"/>
+                                <exclude reference="OSQ-IA-iT9"/>
+                                <exclude reference="5bW-ny-FOC"/>
+                                <exclude reference="mdA-Jx-bKq"/>
+                                <exclude reference="n3c-ik-ig8"/>
+                                <exclude reference="sdu-2a-dfd"/>
                                 <exclude reference="UFX-f8-TBE"/>
                                 <exclude reference="jlq-dE-lbP"/>
                                 <exclude reference="jvP-VX-7c0"/>
-                                <exclude reference="Vnt-kg-whK"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -150,21 +151,21 @@
                                 <include reference="NEg-QW-rNg"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="5bW-ny-FOC"/>
-                                <include reference="mdA-Jx-bKq"/>
-                                <include reference="n3c-ik-ig8"/>
-                                <include reference="sdu-2a-dfd"/>
-                                <include reference="OSQ-IA-iT9"/>
+                                <include reference="Vnt-kg-whK"/>
                                 <include reference="00C-vO-oaq"/>
                                 <include reference="OlP-8N-bQH"/>
                                 <include reference="zwE-k6-jih"/>
                                 <include reference="ap3-qs-pMN"/>
                                 <include reference="bFP-bt-TxB"/>
                                 <include reference="ci2-RE-BGo"/>
+                                <include reference="OSQ-IA-iT9"/>
+                                <include reference="5bW-ny-FOC"/>
+                                <include reference="mdA-Jx-bKq"/>
+                                <include reference="n3c-ik-ig8"/>
+                                <include reference="sdu-2a-dfd"/>
                                 <include reference="UFX-f8-TBE"/>
                                 <include reference="jlq-dE-lbP"/>
                                 <include reference="jvP-VX-7c0"/>
-                                <include reference="Vnt-kg-whK"/>
                             </mask>
                         </variation>
                     </view>

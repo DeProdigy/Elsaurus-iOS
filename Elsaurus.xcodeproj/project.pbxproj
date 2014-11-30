@@ -12,7 +12,6 @@
 		BBA056341A180ABE006F9F9F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA056331A180ABE006F9F9F /* ViewController.swift */; };
 		BBA056371A180ABE006F9F9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA056351A180ABE006F9F9F /* Main.storyboard */; };
 		BBA056391A180ABE006F9F9F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBA056381A180ABE006F9F9F /* Images.xcassets */; };
-		BBA0563C1A180ABE006F9F9F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBA0563A1A180ABE006F9F9F /* LaunchScreen.xib */; };
 		BBA056481A180ABF006F9F9F /* ElsaurusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA056471A180ABF006F9F9F /* ElsaurusTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +33,6 @@
 		BBA056331A180ABE006F9F9F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BBA056361A180ABE006F9F9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BBA056381A180ABE006F9F9F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BBA0563B1A180ABE006F9F9F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BBA056411A180ABF006F9F9F /* ElsaurusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElsaurusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA056461A180ABF006F9F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBA056471A180ABF006F9F9F /* ElsaurusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElsaurusTests.swift; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 				BBA056331A180ABE006F9F9F /* ViewController.swift */,
 				BBA056351A180ABE006F9F9F /* Main.storyboard */,
 				BBA056381A180ABE006F9F9F /* Images.xcassets */,
-				BBA0563A1A180ABE006F9F9F /* LaunchScreen.xib */,
 				BB20D9161A18539100E05DE5 /* ElBackground.png */,
 				BBA0562F1A180ABE006F9F9F /* Supporting Files */,
 			);
@@ -198,7 +195,6 @@
 			files = (
 				BB20D9171A18539100E05DE5 /* ElBackground.png in Resources */,
 				BBA056371A180ABE006F9F9F /* Main.storyboard in Resources */,
-				BBA0563C1A180ABE006F9F9F /* LaunchScreen.xib in Resources */,
 				BBA056391A180ABE006F9F9F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,14 +243,6 @@
 				BBA056361A180ABE006F9F9F /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BBA0563A1A180ABE006F9F9F /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BBA0563B1A180ABE006F9F9F /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -341,6 +329,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Elsaurus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -354,6 +343,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Elsaurus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

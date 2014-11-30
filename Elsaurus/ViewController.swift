@@ -36,6 +36,8 @@ public class Reachability {
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
+    let ipAddress = "http://192.168.1.94:3000/translation"
+    //    let ipAddress = "https://elsaurus.herokuapp.com/translation"
     
     @IBOutlet weak var translatedText: UITextView!
     @IBOutlet weak var userInputTextField: UITextField!
@@ -74,9 +76,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         alert.show()
     }
     
-    func callApi () {
-        // "http://____:3000/translation"
-        var request = NSMutableURLRequest(URL: NSURL(string: "https://elsaurus.herokuapp.com/translation")!)
+    func callTransalteTextAPI() {
+
+        var request = NSMutableURLRequest(URL: NSURL(string: ipAddress)!)
         var session = NSURLSession.sharedSession()
         request.HTTPMethod = "POST"
         var params = ["text":"\(userInputTextField.text)"] as Dictionary
@@ -142,7 +144,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
         if Reachability.isConnectedToNetwork() {
             
-            callApi()
+            callTransalteTextAPI()
             
         } else {
             
