@@ -36,8 +36,8 @@ public class Reachability {
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    let ipAddress = "http://192.168.1.94:3000/translation"
-    //    let ipAddress = "https://elsaurus.herokuapp.com/translation"
+//    let ipAddress = "http://192.168.1.94:3000/translation"
+    let ipAddress = "https://elsaurus.herokuapp.com/translation"
     
     @IBOutlet weak var translatedText: UITextView!
     @IBOutlet weak var userInputTextField: UITextField!
@@ -57,16 +57,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
-
-    
-    @IBAction func translationSubmit(sender: UIButton) {
-        translateTextFieldText()
-    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         translateTextFieldText()
         return true
     }
+
+    
+    @IBAction func translationSubmit(sender: UIButton) {
+        translateTextFieldText()
+    }
+
+    @IBAction func randomSubmit(sender: UIButton) {
+        getRandomQuote()
+    }
+
     
     func showAlert() {
         let alert = UIAlertView()
@@ -75,6 +80,88 @@ class ViewController: UIViewController, UITextFieldDelegate {
         alert.addButtonWithTitle("Thank you")
         alert.show()
     }
+    
+    func translateTextFieldText() {
+        if Reachability.isConnectedToNetwork() {
+            callTransalteTextAPI()
+        } else {
+            showAlert()
+        }
+    }
+    
+    func getRandomQuote() {
+        if Reachability.isConnectedToNetwork() {
+            callRandomQuoteAPI()
+        } else {
+            showAlert()
+        }
+    }
+    
+    func callRandomQuoteAPI() {
+        
+        var request = NSMutableURLRequest(URL: NSURL(string: ipAddress)!)
+        var session = NSURLSession.sharedSession()
+        request.HTTPMethod = "POST"
+        var params = ["random":true] as Dictionary
+        var err: NSError?
+        
+        request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            
+            // json = {"response":"Success","msg":"User login successfully."}
+            
+            if(err != nil) {
+                
+                println(err!.localizedDescription)
+                
+            } else {
+                
+                println("Response: \(response)")
+                
+                var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
+                
+                println("Body: \(strData)\n\n")
+                
+                var err: NSError?
+                
+                var json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as NSDictionary
+                
+                var success = json["response"] as? String
+                
+                println("Succes: \(success)")
+                
+                
+                if json["response"] as NSString == "Success"
+                    
+                {
+                    
+                    println("Login Successfull")
+                    
+                }
+                
+                let responseMsg = json["translation"] as String
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    
+                    self.translatedText.text = responseMsg
+                    
+                    // self.loginStatusLB.text=self.responseMsg
+                    
+                })
+            }
+            
+        })
+        
+        // Hide the keyboard
+        userInputTextField.resignFirstResponder()
+        
+        task.resume()
+    }
+
+
     
     func callTransalteTextAPI() {
 
@@ -139,20 +226,5 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         task.resume()
     }
-    
-    func translateTextFieldText() {
-
-        if Reachability.isConnectedToNetwork() {
-            
-            callTransalteTextAPI()
-            
-        } else {
-            
-            showAlert()
-            
-        }
-
-    }
-
 }
 
