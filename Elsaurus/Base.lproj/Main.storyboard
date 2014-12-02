@@ -24,8 +24,9 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="#justakidfrombrooklyn" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hgj-Tq-7pO">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="FGO-7Z-d9p"/>
-                                    <constraint firstAttribute="width" constant="360" id="Oao-Px-s8Q"/>
+                                    <constraint firstAttribute="height" constant="110" id="FGO-7Z-d9p">
+                                        <variation key="widthClass=compact" constant="120"/>
+                                    </constraint>
                                 </constraints>
                                 <color key="textColor" red="0.90588235289999997" green="0.90588235289999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
@@ -33,17 +34,15 @@
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="FGO-7Z-d9p"/>
-                                        <exclude reference="Oao-Px-s8Q"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="FGO-7Z-d9p"/>
-                                        <include reference="Oao-Px-s8Q"/>
                                     </mask>
                                 </variation>
                             </textView>
-                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsA-LX-NJX">
+                            <button opaque="NO" alpha="0.79999999999999982" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsA-LX-NJX">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.12941176470588237" green="0.18431372549019609" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -52,7 +51,7 @@
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="Translate">
+                                <state key="normal" title="Random Quote">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -96,52 +95,23 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Text to translate" textAlignment="center" minimumFontSize="30" translatesAutoresizingMaskIntoConstraints="NO" id="NEg-QW-rNg">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Text to translate" textAlignment="center" minimumFontSize="30" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="NEg-QW-rNg">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert" returnKeyType="go"/>
                             </textField>
-                            <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhD-F3-zy4">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.12941176469999999" green="0.1843137255" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="bhr-4W-z4y">
-                                        <variation key="widthClass=compact" constant="44"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="18"/>
-                                <state key="normal" title="Random">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="bhr-4W-z4y"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="20" y="278" width="360" height="44"/>
-                                    <mask key="constraints">
-                                        <include reference="bhr-4W-z4y"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="randomSubmit:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="G7w-XX-GDs"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NEg-QW-rNg" firstAttribute="top" secondItem="Hgj-Tq-7pO" secondAttribute="bottom" constant="22" id="00C-vO-oaq"/>
+                            <constraint firstAttribute="trailing" secondItem="Hgj-Tq-7pO" secondAttribute="trailing" constant="20" id="4ze-0r-TIg"/>
                             <constraint firstItem="dWR-K3-AKk" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-20" id="5bW-ny-FOC"/>
+                            <constraint firstItem="Hgj-Tq-7pO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="FBG-jB-pib"/>
                             <constraint firstItem="Hgj-Tq-7pO" firstAttribute="centerX" secondItem="NEg-QW-rNg" secondAttribute="centerX" id="OSQ-IA-iT9"/>
                             <constraint firstItem="NEg-QW-rNg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="OlP-8N-bQH"/>
+                            <constraint firstItem="Hgj-Tq-7pO" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="35" id="RW8-NA-GfG"/>
                             <constraint firstItem="NbN-VF-r2m" firstAttribute="top" secondItem="NEg-QW-rNg" secondAttribute="bottom" constant="9" id="UFX-f8-TBE">
                                 <variation key="widthClass=compact" constant="4"/>
                             </constraint>
@@ -155,7 +125,6 @@
                             <constraint firstItem="NbN-VF-r2m" firstAttribute="width" secondItem="NEg-QW-rNg" secondAttribute="width" id="jvP-VX-7c0"/>
                             <constraint firstItem="dWR-K3-AKk" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="mdA-Jx-bKq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dWR-K3-AKk" secondAttribute="trailing" constant="-16" id="n3c-ik-ig8"/>
-                            <constraint firstItem="dWR-K3-AKk" firstAttribute="top" secondItem="Hgj-Tq-7pO" secondAttribute="bottom" constant="-165" id="sdu-2a-dfd"/>
                             <constraint firstAttribute="trailing" secondItem="NEg-QW-rNg" secondAttribute="trailing" constant="20" id="zwE-k6-jih"/>
                         </constraints>
                         <variation key="default">
@@ -165,24 +134,25 @@
                                 <exclude reference="rsA-LX-NJX"/>
                                 <exclude reference="NbN-VF-r2m"/>
                                 <exclude reference="NEg-QW-rNg"/>
-                                <exclude reference="hhD-F3-zy4"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Vnt-kg-whK"/>
-                                <exclude reference="00C-vO-oaq"/>
-                                <exclude reference="OlP-8N-bQH"/>
-                                <exclude reference="zwE-k6-jih"/>
-                                <exclude reference="ap3-qs-pMN"/>
-                                <exclude reference="bFP-bt-TxB"/>
-                                <exclude reference="ci2-RE-BGo"/>
-                                <exclude reference="OSQ-IA-iT9"/>
                                 <exclude reference="5bW-ny-FOC"/>
                                 <exclude reference="mdA-Jx-bKq"/>
                                 <exclude reference="n3c-ik-ig8"/>
-                                <exclude reference="sdu-2a-dfd"/>
+                                <exclude reference="4ze-0r-TIg"/>
+                                <exclude reference="FBG-jB-pib"/>
+                                <exclude reference="OSQ-IA-iT9"/>
+                                <exclude reference="RW8-NA-GfG"/>
+                                <exclude reference="00C-vO-oaq"/>
+                                <exclude reference="OlP-8N-bQH"/>
+                                <exclude reference="zwE-k6-jih"/>
                                 <exclude reference="UFX-f8-TBE"/>
                                 <exclude reference="jlq-dE-lbP"/>
                                 <exclude reference="jvP-VX-7c0"/>
+                                <exclude reference="ap3-qs-pMN"/>
+                                <exclude reference="bFP-bt-TxB"/>
+                                <exclude reference="ci2-RE-BGo"/>
+                                <exclude reference="Vnt-kg-whK"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -192,28 +162,30 @@
                                 <include reference="rsA-LX-NJX"/>
                                 <include reference="NbN-VF-r2m"/>
                                 <include reference="NEg-QW-rNg"/>
-                                <include reference="hhD-F3-zy4"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Vnt-kg-whK"/>
-                                <include reference="00C-vO-oaq"/>
-                                <include reference="OlP-8N-bQH"/>
-                                <include reference="zwE-k6-jih"/>
-                                <include reference="ap3-qs-pMN"/>
-                                <include reference="bFP-bt-TxB"/>
-                                <include reference="ci2-RE-BGo"/>
-                                <include reference="OSQ-IA-iT9"/>
                                 <include reference="5bW-ny-FOC"/>
                                 <include reference="mdA-Jx-bKq"/>
                                 <include reference="n3c-ik-ig8"/>
-                                <include reference="sdu-2a-dfd"/>
+                                <include reference="4ze-0r-TIg"/>
+                                <include reference="FBG-jB-pib"/>
+                                <include reference="OSQ-IA-iT9"/>
+                                <include reference="RW8-NA-GfG"/>
+                                <include reference="00C-vO-oaq"/>
+                                <include reference="OlP-8N-bQH"/>
+                                <include reference="zwE-k6-jih"/>
                                 <include reference="UFX-f8-TBE"/>
                                 <include reference="jlq-dE-lbP"/>
                                 <include reference="jvP-VX-7c0"/>
+                                <include reference="ap3-qs-pMN"/>
+                                <include reference="bFP-bt-TxB"/>
+                                <include reference="ci2-RE-BGo"/>
+                                <include reference="Vnt-kg-whK"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="submitButton" destination="rsA-LX-NJX" id="rjx-bx-376"/>
                         <outlet property="translatedText" destination="Hgj-Tq-7pO" id="tWs-RO-Tw9"/>
                         <outlet property="userInputTextField" destination="NEg-QW-rNg" id="XkI-A5-v1W"/>
                     </connections>

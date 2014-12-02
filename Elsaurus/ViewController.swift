@@ -7,32 +7,7 @@
 //
 
 import UIKit
-import SystemConfiguration
 
-public class Reachability {
-    
-    class func isConnectedToNetwork() -> Bool {
-        
-        var zeroAddress = sockaddr_in(sin_len: 0, sin_family: 0, sin_port: 0, sin_addr: in_addr(s_addr: 0), sin_zero: (0, 0, 0, 0, 0, 0, 0, 0))
-        zeroAddress.sin_len = UInt8(sizeofValue(zeroAddress))
-        zeroAddress.sin_family = sa_family_t(AF_INET)
-        
-        let defaultRouteReachability = withUnsafePointer(&zeroAddress) {
-            SCNetworkReachabilityCreateWithAddress(nil, UnsafePointer($0)).takeRetainedValue()
-        }
-        
-        var flags: SCNetworkReachabilityFlags = 0
-        if SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) == 0 {
-            return false
-        }
-        
-        let isReachable = (flags & UInt32(kSCNetworkFlagsReachable)) != 0
-        let needsConnection = (flags & UInt32(kSCNetworkFlagsConnectionRequired)) != 0
-        
-        return (isReachable && !needsConnection) ? true : false
-    }
-    
-}
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
@@ -41,6 +16,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var translatedText: UITextView!
     @IBOutlet weak var userInputTextField: UITextField!
+    @IBOutlet weak var submitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,10 +43,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func translationSubmit(sender: UIButton) {
         translateTextFieldText()
     }
-
-    @IBAction func randomSubmit(sender: UIButton) {
-        getRandomQuote()
-    }
+    
+//
+//    @IBAction func randomSubmit(sender: UIButton) {
+//        getRandomQuote()
+//    }
 
     
     func showAlert() {
@@ -228,3 +205,55 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
+
+//MARK:
+//MARK: UITextFieldDelegate Methods
+extension ViewController: UITextFieldDelegate {
+    
+    
+    
+    
+    func changeButtonToRandom() {
+        submitButton.setTitle("Random Quote", forState: .Normal)
+    }
+    
+    func changeButtonToTranslate() {
+        submitButton.setTitle("Elify", forState: .Normal)
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    
+        // Don't let the user put in space as first chacter
+        if string == " " && range.location == 0 {
+            // Keep button at "Random" mode/
+            changeButtonToRandom()
+            return false
+        }
+        
+        // When the user backspaces to an empty textfield
+        if (textField.text as NSString).length ==  1 && string == "" {
+            // Keep button at "Random" mode
+            changeButtonToRandom()
+            println("Backspaced to nothing")
+        } else {
+            changeButtonToTranslate()
+        }
+        
+        return true
+    }
+    
+    func textFieldShouldClear(textField: UITextField) -> Bool {
+        changeButtonToRandom()
+        return true
+    }
+
+    
+    /*
+    
+    
+    
+    
+    */
+
+    
+}

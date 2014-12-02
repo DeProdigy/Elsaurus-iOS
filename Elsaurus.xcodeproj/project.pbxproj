@@ -13,6 +13,7 @@
 		BBA056371A180ABE006F9F9F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBA056351A180ABE006F9F9F /* Main.storyboard */; };
 		BBA056391A180ABE006F9F9F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BBA056381A180ABE006F9F9F /* Images.xcassets */; };
 		BBA056481A180ABF006F9F9F /* ElsaurusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA056471A180ABF006F9F9F /* ElsaurusTests.swift */; };
+		BBF83EA01A2D36A100335C46 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF83E9F1A2D36A100335C46 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		BBA056411A180ABF006F9F9F /* ElsaurusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ElsaurusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBA056461A180ABF006F9F9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BBA056471A180ABF006F9F9F /* ElsaurusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElsaurusTests.swift; sourceTree = "<group>"; };
+		BBF83E9F1A2D36A100335C46 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				BBA056311A180ABE006F9F9F /* AppDelegate.swift */,
+				BBF83E9F1A2D36A100335C46 /* Reachability.swift */,
 				BBA056331A180ABE006F9F9F /* ViewController.swift */,
 				BBA056351A180ABE006F9F9F /* Main.storyboard */,
 				BBA056381A180ABE006F9F9F /* Images.xcassets */,
@@ -215,6 +218,7 @@
 			files = (
 				BBA056341A180ABE006F9F9F /* ViewController.swift in Sources */,
 				BBA056321A180ABE006F9F9F /* AppDelegate.swift in Sources */,
+				BBF83EA01A2D36A100335C46 /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
